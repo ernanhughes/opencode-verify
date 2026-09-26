@@ -141,3 +141,7 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+# opencode-verify local stores (receipts must not become committed source)
+.verify/
+.opencode-verify/
