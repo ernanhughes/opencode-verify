@@ -1,6 +1,8 @@
 import { canonicalize, sha256Hex } from "./canonical";
 
-export const MAX_CLAIM_STATEMENT_CHARS = 4096;
+// Worker objectives may carry bounded, authoritative application context;
+// claims must preserve the same statement without truncation.
+export const MAX_CLAIM_STATEMENT_CHARS = 65536;
 export const MAX_CLAIM_SCOPE_BYTES = 16_384;
 export const CLAIM_ID_PATTERN = /^cl_[0-9a-f]{32}$/;
 

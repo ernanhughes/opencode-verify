@@ -38,7 +38,7 @@ describe("claims", () => {
     expect(normalizeClaim({ statement: 42 }).ok).toBe(false);
     expect(normalizeClaim({ statement: "x", claim_id: "bogus" }).ok).toBe(false);
     expect(normalizeClaim({ statement: "x", scope: [1] }).ok).toBe(false);
-    expect(normalizeClaim({ statement: "x".repeat(4097) }).ok).toBe(false);
+    expect(normalizeClaim({ statement: "x".repeat(65537) }).ok).toBe(false);
     for (const bad of [
       normalizeClaim(null),
       normalizeClaim({ statement: "" }),
